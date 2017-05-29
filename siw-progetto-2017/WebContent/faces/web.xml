@@ -1,0 +1,9 @@
+<display-name>TutorialJSF</display-name>
+<welcome-file-list>
+    <welcome-file>faces/index.jsp</welcome-file>
+</welcome-file-list>
+<display-name>NomeApplicazione</display-name>
+<servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+</servlet-mapping>
