@@ -13,4 +13,5 @@ public class HelloWorldBean {
     public String getMessaggio() {
         return this.messaggio;
     }
+    
 }
