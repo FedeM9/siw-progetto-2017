@@ -2,7 +2,7 @@ package it.html.bean;
  
 public class HelloWorldBean {
  
-    private String messaggio = "Ciao Mondo!";
+    private String messaggio = "Ciao Mondo!!!";
  
     public HelloWorldBean() {}
  
