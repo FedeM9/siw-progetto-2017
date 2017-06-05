@@ -1,4 +1,4 @@
-package it.uniroma3.siw.progetto;
+package it.uniroma3.siw.modello;
 
 import java.util.Date;
 
