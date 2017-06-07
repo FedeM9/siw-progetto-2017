@@ -1,10 +1,11 @@
 package it.uniroma3.siw.modello;
 
 import java.util.Date;
+import org.hibernate.Hibernate;
 
 
 public class Opera {
-	@Size(min=1,message="Il campo nome non può essere vuoto")
+	@Size(min=1,message="Il campo nome non puï¿½ essere vuoto")
 	private String titolo;
 	private String autore;
 	private Date anno;
