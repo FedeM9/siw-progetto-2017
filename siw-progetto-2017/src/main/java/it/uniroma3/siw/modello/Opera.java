@@ -3,6 +3,8 @@ package it.uniroma3.siw.modello;
 import java.util.Date;
 import org.hibernate.Hibernate;
 
+import javax.validation.constraints.Size;
+
 
 public class Opera {
 	@Size(min=1,message="Il campo nome non pu� essere vuoto")
