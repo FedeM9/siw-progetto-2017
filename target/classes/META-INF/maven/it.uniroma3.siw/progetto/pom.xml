@@ -9,7 +9,6 @@
 	<packaging>jar</packaging>
 
 	<name>progetto</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -76,4 +75,5 @@
 	</build>
 
 
+	<description>Progetto per l'esame di Sistemi Informativi su Web di Moscatelli e Nicosanti per l'esame di giugno 2017.</description>
 </project>
