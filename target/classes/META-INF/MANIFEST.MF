@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: progetto
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Gabriele
+Implementation-Vendor-Id: it.uniroma3.siw
+Build-Jdk: 1.8.0_131
+Implementation-URL: http://projects.spring.io/spring-boot/progetto/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
