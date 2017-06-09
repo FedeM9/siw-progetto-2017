@@ -1,8 +1,6 @@
 package it.uniroma3.siw.modello;
 
 import java.util.Date;
-
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 

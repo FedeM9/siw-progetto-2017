@@ -1,8 +1,6 @@
 package it.uniroma3.siw.service;
 
-
 import java.util.Date;
-import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +33,12 @@ public class OperaService {
 		return this.operaRepository.findOne(id);
 	}
 	
-	public Iterable<Opera> findByAnno(Date  anno){
+	public Iterable<Opera> findByAnno(Date anno){
 		return this.operaRepository.findByAnno(anno);
 	}
+	
 	public Iterable<Opera> findByTecnica(String tecnica){
 		return this.operaRepository.findByTecnica(tecnica);
 	}
 	
-
 }

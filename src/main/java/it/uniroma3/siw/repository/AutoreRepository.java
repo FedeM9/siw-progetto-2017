@@ -8,5 +8,4 @@ import it.uniroma3.siw.modello.Autore;
 public interface AutoreRepository extends CrudRepository<Autore, Long>{
 	
 	  List<Autore> findAll(String lastName);
-
 }
