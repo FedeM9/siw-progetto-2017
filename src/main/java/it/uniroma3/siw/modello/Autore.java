@@ -2,14 +2,21 @@ package it.uniroma3.siw.modello;
 
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
 public class Autore {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	private String nome;
 	private String cognome;
 	private String nazionalita;
 	private Date dataNascita;
 	private Date dataMorte;
-	
+
 	public Autore() {
 	}
 
@@ -61,5 +68,5 @@ public class Autore {
 	public void setDataMorte(Date dataMorte) {
 		this.dataMorte = dataMorte;
 	}
-	
+
 }
