@@ -14,7 +14,7 @@ public class Opera {
 	@Size(min=1,message="Il campo nome non può essere vuoto")
 	private String titolo;
 	
-	 @OneToOne(cascade={CascadeType.PERSIST})
+
 	private Autore autore;
 	private Date anno;
 	private String tecnica;
