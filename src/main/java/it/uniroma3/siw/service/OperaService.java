@@ -1,7 +1,9 @@
 package it.uniroma3.siw.service;
 
+
 import java.util.Date;
 import java.util.List;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,8 +11,6 @@ import org.springframework.stereotype.Service;
 import it.uniroma3.siw.modello.Autore;
 import it.uniroma3.siw.modello.Opera;
 import it.uniroma3.siw.repository.OperaRepository;
-
-
 
 @Service
 public class OperaService {
@@ -21,8 +21,18 @@ public class OperaService {
     public Iterable<Opera> findAll() {
         return this.operaRepository.findAll();
     }
+
 	public   Iterable<Opera> findByAutore(Autore autore){
 		return this.operaRepository.findByAutore(autore);
+	}
+    
+    @Transactional
+    public void add(final Opera opera) {
+        this.operaRepository.save(opera);
+    }
+
+	public Opera findbyId(Long id) {
+		return this.operaRepository.findOne(id);
 	}
 	
 	public Iterable<Opera> findByAnno(Date  anno){
@@ -32,7 +42,5 @@ public class OperaService {
 		return this.operaRepository.findByTecnica(tecnica);
 	}
 	
-	public void add(final Opera opera){
-		this.operaRepository.save(opera);
-	}
+
 }
