@@ -24,6 +24,10 @@ public class AutoreService {
         this.autoreRepository.save(autore);
     }
 
+	public Iterable<Autore> findByCognome(String cognome) {
+		return this.autoreRepository.findByNazionalita(cognome);
+	}
+    
 	public Iterable<Autore> findByNazionalita(String nazionalita) {
 		return this.autoreRepository.findByNazionalita(nazionalita);
 	}
