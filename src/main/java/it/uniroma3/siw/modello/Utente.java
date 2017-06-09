@@ -1,17 +1,24 @@
 package it.uniroma3.siw.modello;
 
 public class Utente {
-	
+
+	private Long id;
 	private String username;
 	private String password;
 
-	public Utente() {
+	public Utente(Long id) {
+		this.id = id;
 	}
 
-	public Utente(String username, String password) {
+	public Utente(Long id, String username, String password) {
 		super();
+		this.id = id;
 		this.username = username;
 		this.password = password;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getUsername() {
@@ -29,5 +36,5 @@ public class Utente {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }
