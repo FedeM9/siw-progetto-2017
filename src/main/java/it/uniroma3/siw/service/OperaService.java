@@ -20,7 +20,7 @@ public class OperaService {
         return this.operaRepository.findAll();
     }
 
-	public   Iterable<Opera> findByAutore(Autore autore){
+	public Iterable<Opera> findByAutore(Autore autore){
 		return this.operaRepository.findByAutore(autore);
 	}
     
