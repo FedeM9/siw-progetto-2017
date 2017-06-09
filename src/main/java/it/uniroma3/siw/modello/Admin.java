@@ -1,5 +1,8 @@
 package it.uniroma3.siw.modello;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Admin extends Utente {
 	
 	public Admin(Long id) {
