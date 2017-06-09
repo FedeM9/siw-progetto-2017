@@ -1,12 +1,23 @@
 package it.uniroma3.siw.modello;
 
 import java.util.Date;
+
+
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+
+@Entity
 public class Opera {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
 	@Size(min=1,message="Il campo nome non può essere vuoto")
 	private String titolo;
-	private String autore;
+	
+	 @OneToOne(cascade={CascadeType.PERSIST})
+	private Autore autore;
 	private Date anno;
 	private String tecnica;
 	private float dimensioni;
@@ -14,7 +25,7 @@ public class Opera {
 	public Opera() {
 	}
 	
-	public Opera(String titolo, String autore, Date anno, String tecnica, float dimensioni) {
+	public Opera(String titolo, Autore autore, Date anno, String tecnica, float dimensioni) {
 		super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -31,11 +42,11 @@ public class Opera {
 		this.titolo = titolo;
 	}
 
-	public String getAutore() {
+	public Autore getAutore() {
 		return autore;
 	}
 
-	public void setAutore(String autore) {
+	public void setAutore(Autore autore) {
 		this.autore = autore;
 	}
 
