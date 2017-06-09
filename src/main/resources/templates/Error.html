@@ -8,7 +8,7 @@
         <form action="#" th:action="@{/utenteLogin}" th:object="${utente}" method="post">
             <div>
                 <div>
-                    <span th:text="#{label.username}">UserName: </span>
+                    <span th:text="#{label.username}">username: </span>
                     <span><input type="text" th:field="*{username}" /></span>
                     <span th:if="${#fields.hasErrors('username')}" th:text="#{label.mandatory}">Error</span>
                 </div>
