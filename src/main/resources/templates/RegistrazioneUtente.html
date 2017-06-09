@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login Error</title>
+<title>Login Utente</title>
 </head>
 <body>
-        <form action="#" th:action="@{/utenteLogin}" th:object="${utente}" method="post">
+	        <form action="#" th:action="@{/utenteReg}" th:object="${utente}" method="post">
             <div>
                 <div>
-                    <span th:text="#{label.username}">UserName: </span>
+                    <span th:text="#{label.username}">Username: </span>
                     <span><input type="text" th:field="*{username}" /></span>
                     <span th:if="${#fields.hasErrors('username')}" th:text="#{label.mandatory}">Error</span>
                 </div>
@@ -17,10 +17,10 @@
                     <span><input type="password" th:field="*{password}" /></span>
                     <span th:if="${#fields.hasErrors('password')}" th:text="#{label.mandatory}">Error</span>
                 </div>
-               <div>
+                <div>
                     <span><button type="submit">Submit</button></span>
                 </div>
             </div>
-        </form>
+        </form>	
 </body>
 </html>

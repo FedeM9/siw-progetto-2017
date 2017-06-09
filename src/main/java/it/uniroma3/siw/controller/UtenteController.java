@@ -18,11 +18,22 @@ public class UtenteController {
 	UtenteService utenteService;
 	
 	@PostMapping("/utenteLogin")
-    public String checkCustomerInfo(@Valid @ModelAttribute Utente utente, 
+    public String checkUtenteInfo(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
+    	
+        if (bindingResult.hasErrors()) {
+            return "Error"; //in caso di errore 
+        }
+        return "LoginUtenteEffettuato";
+    }
+	@PostMapping("/utenteReg")
+    public String insertNewUtente(@Valid @ModelAttribute Utente utente, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "Error"; //in caso di errore 
+        } else {
+        	model.addAttribute(utente);
+        	utenteService.add(utente); 
         }
         return "LoginUtenteEffettuato";
     }
