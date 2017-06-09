@@ -30,8 +30,7 @@ public class OperaController {
     	
         if (bindingResult.hasErrors()) {
             return "form";
-        }
-        else {
+        } else {
         	model.addAttribute(opera);
         	operaService.add(opera); 
         }
