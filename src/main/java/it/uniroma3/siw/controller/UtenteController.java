@@ -33,7 +33,7 @@ public class UtenteController {
             return "Error"; //in caso di errore 
         } else {
         	model.addAttribute(utente);
-//        	utenteService.add(utente); 
+        	utenteService.add(utente); 
         }
         return "LoginUtenteEffettuato";
     }

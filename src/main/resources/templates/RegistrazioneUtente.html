@@ -7,16 +7,14 @@
 <body>
 	        <form action="#" th:action="@{/utenteReg}" th:object="${utente}" method="post">
             <div>
-                <div>
-                    <span th:text="#{label.username}">Username: </span>
-                    <span><input type="text" th:field="*{username}" /></span>
-                    <span th:if="${#fields.hasErrors('username')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.password}">Password: </span>
-                    <span><input type="password" th:field="*{password}" /></span>
-                    <span th:if="${#fields.hasErrors('password')}" th:text="#{label.mandatory}">Error</span>
-                </div>
+            <div>
+            	<span>UserName:<input type="text" id="username" name="username"/> </span>
+            </div>
+  			 <div>
+  			 <span>Password:<input type="password" id="password" name="password"/></span> 
+  			 </div>
+			
+			
                 <div>
                     <span><button type="submit">Submit</button></span>
                 </div>

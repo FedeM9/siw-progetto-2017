@@ -14,14 +14,18 @@ public class Utente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+
 	@Size(min=1)
 	private String username;
 	
-	@NotNull
+
 	@Size(min=1)
 	private String password;
 
+	public Utente(){
+		
+	}
+	
 	public Utente(Long id) {
 		this.id = id;
 	}
