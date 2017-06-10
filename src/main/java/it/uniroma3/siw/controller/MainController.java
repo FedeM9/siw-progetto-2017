@@ -8,17 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-  // Login form
-  @RequestMapping("/formLoginUtente.html")
-  public String login() {
-    return "formLoginUtente";
-  }
+	// Login form
+	@RequestMapping("/formLoginUtente.html")
+	public String login() {
+		return "formLoginUtente";
+	}
 
-  // Login form with error
-  @RequestMapping("/Error.html")
-  public String loginError(Model model) {
-    model.addAttribute("Error", true);
-    return "formLoginUtente";
-  }
+	// Login form with error
+	@RequestMapping("/Error.html")
+	public String loginError(Model model) {
+		model.addAttribute("Error", true);
+		return "formLoginUtente";
+	}
+
+	//Register form
+	@RequestMapping("/RegistrazioneUtente.html")
+	public String register() {
+		return "RegistrazioneUtente";
+	}
 
 }
