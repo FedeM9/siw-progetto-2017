@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
   // Login form
-  @RequestMapping("/formLoginUtente")
+  @RequestMapping("/formLoginUtente.html")
   public String login() {
     return "formLoginUtente";
   }
 
   // Login form with error
-  @RequestMapping("/login-error.html")
+  @RequestMapping("/Error.html")
   public String loginError(Model model) {
-    model.addAttribute("loginError", true);
-    return "login";
+    model.addAttribute("Error", true);
+    return "formLoginUtente";
   }
 
 }

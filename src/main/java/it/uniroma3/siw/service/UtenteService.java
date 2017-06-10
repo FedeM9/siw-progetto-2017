@@ -21,6 +21,6 @@ public class UtenteService {
     }
     
     public Utente findByUserName(String username){
-    	return this.utenteRepository.findByUserName(username);
+    	return this.utenteRepository.findByUsername(username);
     }
 }
