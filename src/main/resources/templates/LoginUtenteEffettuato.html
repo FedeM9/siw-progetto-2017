@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1" />
 <title>Insert title here</title>
 </head>
 <body>
-		<p> Accesso Effettuato </p>
+	<p>Accesso Effettuato</p>
+	<div>Le opere nel museo sono:</div>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>Tecnica</th>
+			<th>Autore</th>
+		</tr>
+		<tr th:each="op : ${opere}">
+			<td th:text="${op.titolo}"></td>
+			<td th:text="${op.tecnica}"></td>
+			<td th:text="${op.autore}"></td>
+		</tr>
+	</table>
 </body>
 </html>
