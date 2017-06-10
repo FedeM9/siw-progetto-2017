@@ -26,8 +26,7 @@ public class UtenteController {
         return "LoginUtenteEffettuato";
     }
 	@PostMapping("/utenteReg")
-    public String insertNewUtente(@Valid @ModelAttribute Utente utente, 
-    									BindingResult bindingResult, Model model) {
+    public String insertNewUtente(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "Error"; //in caso di errore 
