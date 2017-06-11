@@ -43,10 +43,10 @@ public class AdminController {
         return "OperazioniAdmin";
     }
 	@PostMapping("/adminReg")
-    public String insertNewUtente(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
+    public String insertNewAdmin(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
-            return "Error"; //in caso di errore 
+            return "RegistrazioneAdmin"; //in caso di errore 
         } else {
         	model.addAttribute(admin);
         	adminService.add(admin); 

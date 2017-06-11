@@ -23,13 +23,18 @@ public class MainController {
 
 	//Register form
 	@RequestMapping("/RegistrazioneUtente.html")
-	public String register() {
+	public String registerU() {
 		return "RegistrazioneUtente";
 	}
 	
 	@RequestMapping("/LoginAdmin.html")
 	public String loginAdmin() {
 		return "LoginAdmin";
+	}
+	
+	@RequestMapping("/RegistrazioneAdmin.html")
+	public String registerA() {
+		return "RegistrazioneAdmin";
 	}
 	
 }
