@@ -6,20 +6,18 @@
 <title>Login Amministratore</title>
 </head>
 <body>
-	<h1 align="center">Gallery</h1>
+	<h1>Gallery</h1>
 	<form name="f" th:action="@{/adminLogin}" method="post">
 		<div>
 			<div>
-				<span>UserName:<input type="text" id="username"		name="username" /></span>
+				<span>UserName:<input type="text" id="username"	name="username" /></span>
 			</div>
 			<div>
-				 <span>Password:<input type="password" id="password"
-					name="password" /></span>
+				 <span>Password:<input type="password" id="password" name="password" /></span>
 			</div>
-
+			<span><button type="submit">Submit</button></span>
 		</div>
-		<span><button type="submit">Submit</button></span>
 	</form>
-	<a href="RegistrazioneAdmin.html">Registrati</a>
+	<div><a href="RegistrazioneAdmin.html">Registrati</a></div>
 </body>
 </html>
