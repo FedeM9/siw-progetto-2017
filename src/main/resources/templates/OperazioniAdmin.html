@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Bentornato ${admin.username}</h1>
+		<table>
+		<tr>
+			<th>Nome</th>
+			<th>Tecnica</th>
+			<th>Autore</th>
+		</tr>
+		<tr th:each="op : ${opere}">
+			<td th:text="${op.titolo}"></td>
+			<td th:text="${op.tecnica}"></td>
+			<td th:text="${op.autore}"></td>
+		</tr>
+	</table>
+</body>
+</html>

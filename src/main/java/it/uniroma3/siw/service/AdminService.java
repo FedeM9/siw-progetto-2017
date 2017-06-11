@@ -15,6 +15,7 @@ public class AdminService {
 	@Autowired
 	private AdminRepository adminRepository;
 	
+	
     @Transactional
     public void add(final Admin admin) {
         this.adminRepository.save(admin);
