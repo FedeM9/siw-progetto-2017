@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 body {
-    background-image: url("http://i.imgur.com/Nbi7bYI.jpg");
+	background-image: url("http://i.imgur.com/Nbi7bYI.jpg");
 }
 
 div, h1, h2, h3, h4, h5, h6 {
@@ -17,17 +18,79 @@ h1 {
 	font-color: red;
 }
 
-.container-center, .container-upper {
+.container-center, .container-upper, .corpo {
 	position: absolute;
 	transform: translateX(-50%) translateY(-50%);
 }
 
 .container-center {
-    top: 50%;
-    left: 50%;
+	top: 50%;
+	left: 50%;
 }
 
 .container-upper {
-    top: 25%;
-    left: 50%;
+	top: 25%;
+	left: 50%;
+}
+
+
+
+.corpo{
+	left: 50%;
+}
+
+.menu li{
+	display: block;
+	float: left;
+	width: 125px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #2C3E50;
+	border-right: 1px solid #2C3E50;
+	background: -webkit-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	background: -moz-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+}
+.menu li:hover{
+	cursor: pointer;
+	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
+	background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
+	background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
+	color: slateGrey;
+}
+.primo{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.ultimo{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.sub-menu{
+	visibility: hidden;
+}
+.menu li:hover .sub-menu{
+	visibility: visible;
+}
+.sub-menu li{
+	border-top: 1px dotted #2C3E50;
+}
+.sub-menu li:hover{
+	width: 145px;
+	background: -webkit-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
+	background: -moz-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
+	background: -o-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
+	transition: all 0.1s ease 0s;
+	-webkit-transition: all 0.1s ease 0s;
+	-moz-transition: all 0.1s ease 0s;
+	-o-transition: all 0.1s ease 0s;
+	-ms-transition: all 0.1s ease 0s;
+}
+.ultimo-sub{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }

@@ -24,7 +24,7 @@ public class UtenteController {
             return "Error"; //in caso di errore 
         }else{
         	if(utenteService.findByUserName(utente.getUsername())==null){
-        		 return "formLoginUtente";
+        		 return "LoginUtente";
         	}
         }
         return "LoginUtenteEffettuato";
