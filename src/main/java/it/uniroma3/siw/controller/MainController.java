@@ -26,5 +26,10 @@ public class MainController {
 	public String register() {
 		return "RegistrazioneUtente";
 	}
-
+	
+	@RequestMapping("/LoginAdmin.html")
+	public String loginAdmin() {
+		return "LoginAdmin";
+	}
+	
 }
