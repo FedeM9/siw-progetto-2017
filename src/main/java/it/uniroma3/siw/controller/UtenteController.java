@@ -22,6 +22,10 @@ public class UtenteController {
     	
         if (bindingResult.hasErrors()) {
             return "Error"; //in caso di errore 
+        }else{
+        	if(utenteService.findByUserName(utente.getUsername())==null){
+        		 return "formLoginUtente";
+        	}
         }
         return "LoginUtenteEffettuato";
     }
