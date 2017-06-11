@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 body {
     background-image: url("http://i.imgur.com/Nbi7bYI.jpg");
@@ -6,6 +7,8 @@ body {
 
 div, h1, h2, h3, h4, h5, h6 {
 	text-align: center;
+	font-family: 'Playfair Display';
+	font-size: 1.25em;
 }
 
 h1 {
