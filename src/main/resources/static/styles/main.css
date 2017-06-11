@@ -1,7 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC');
+
 body {
     background-image: url("http://i.imgur.com/Nbi7bYI.jpg");
 }
 
 div, h1, h2, h3, h4, h5, h6 {
 	text-align: center;
+}
+
+h1 {
+	font-family: 'Patrick Hand SC';
+	font-size: 5em;
+	font-color: red;
+}
+
+.container-center, .container-upper {
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.container-center {
+    top: 50%;
+    left: 50%;
+}
+
+.container-upper {
+    top: 25%;
+    left: 50%;
 }

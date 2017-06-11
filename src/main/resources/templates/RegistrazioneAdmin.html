@@ -6,16 +6,14 @@
 <link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
-	<form action="#" th:action="@{/adminReg}" th:object="${admin}"
-		method="post">
+	<h1>Registrazione Admin</h1>
+	<form action="#" th:action="@{/adminReg}" th:object="${admin}" method="post">
 		<div>
 			<div>
-				<span>UserName:<input type="text" id="username"
-					name="username" /></span>
+				<span>UserName:<input type="text" id="username"	name="username" /></span>
 			</div>
 			<div>
-				<span>Password:<input type="password" id="password"
-					name="password" /></span>
+				<span>Password:<input type="password" id="password"	name="password" /></span>
 			</div>
 			<div>
 				<span><button type="submit">Submit</button></span>
