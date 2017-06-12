@@ -19,106 +19,128 @@
 	<h1>
 		<br></br>Bentornato <span th:text="	${nomeAdmin}"></span>
 	</h1>
-	<div>
-		<h2>Inserisci Autore:</h2>
-		<form name="a" th:action="@{/addAutore}" th:object="${autore}" method="post">
-			<div>
+
+	<table class="center">
+		<tr>
+			<th><h2>Inserisci Autore:</h2></th>
+			<th><h2>Inserisci Opera:</h2></th>
+		</tr>
+
+		<tr>
+			<th>
 				<div>
-					<span>Nome: <input type="text" id="nome" name="nome" /></span>
+					<form name="a" th:action="@{/addAutore}" th:object="${autore}"
+						method="post">
+						<div>
+							<div>
+								<span>Nome: <input type="text" id="nome" name="nome" /></span>
+							</div>
+							<div>
+								<span>Cognome: <input type="text" id="cognome"
+									name="cognome" /></span>
+							</div>
+							<div>
+								<span>Nazionalità: <input type="text" id="nazionalita"
+									name="nazionalita" /></span>
+							</div>
+							<div>
+								<span>Data di Nascita: <input type="date"
+									id="dataNascita" name="data_nascita" /></span>
+							</div>
+							<div>
+								<span>Data di Morte: <input type="date" id="dataMorte"
+									name="data_morte" /></span>
+							</div>
+							<button type="submit">Submit</button>
+						</div>
+					</form>
 				</div>
+			</th>
+
+			<th>
 				<div>
-					<span>Cognome: <input type="text" id="cognome" name="cognome" /></span>
+					<form name="a" th:action="@{/addOpera}" th:object="${opera}"
+						method="post">
+						<div>
+							<div>
+								<span>Titolo: <input type="text" id="titolo"
+									name="titolo" /></span>
+							</div>
+							<div>
+								<span>Tecnica: <input type="text" id="tecnica"
+									name="tecnica" /></span>
+							</div>
+							<div>
+								<span>Anno: <input type="text" id="anno" name="anno" /></span>
+							</div>
+							<div>
+								<span>Dimensioni: <input type="text" id="dimensioni"
+									name="dimensioni" /></span>
+							</div>
+							<div>
+								Autore: <select name="autore">
+									<option th:each="aut : ${autori}" th:value="${{aut.id}}"
+										th:text="${aut.nome}">Wireframe</option>
+								</select>
+							</div>
+							<div>
+								Restauro: <select name="restauro">
+									<option th:text="Si">Wireframe</option>
+									<option th:text="No">Wireframe</option>
+								</select>
+							</div>
+							<button type="submit">Submit</button>
+						</div>
+					</form>
 				</div>
-				<div>
-					<span>Nazionalità: <input type="text" id="nazionalita" name="nazionalita" /></span>
-				</div>
-				<div>
-					<span>Data di Nascita: <input type="date" id="datadinascita" name="data_nascita" /></span>
-				</div>
-				<div>
-					<span>Data di Morte: <input type="date" id="datadimorte" name="data_morte" /></span>
-				</div>
-				<button type="submit">Submit</button>
-			</div>
-		</form>
-	</div>
+			</th>
+		</tr>
+	</table>
 
 	<div>
-	<h2>Inserisci Opera:</h2>
-		<form name="a" th:action="@{/addOpera}" th:object="${opera}" method="post">
-			<div>
-				<div>
-					<span>Titolo: <input type="text" id="titolo" name="titolo" /></span>
-				</div>
-				<div>
-					<span>Tecnica: <input type="text" id="tecnica" name="tecnica" /></span>
-				</div>
-				<div>
-					<span>Anno: <input type="text" id="anno" name="anno" /></span>
-				</div>
-				<div>
-					<span>Dimensioni: <input type="text" id="dimensioni" name="dimensioni" /></span>
-				</div>
-				<div>
-					Autore: <select name="autore">
-						<option th:each="aut : ${autori}" th:value="${{aut.id}}"
-							th:text="${aut.nome}">Wireframe</option>
-					</select>
-				</div>
-				<div>
-					Restauro: <select name="restauro">
-						<option th:text="Si">Wireframe</option>
-						<option th:text="No">Wireframe</option>
-					</select>
-				</div>
-				<button type="submit">Submit</button>
-			</div>
-		</form>
-
-	</div>
-
-	
-	<div>
-	<h2>Elimina Opera:</h2>
-		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"	method="post">
-			<h4>Opera da eliminare: </h4><select name="opera">
+		<h2>Elimina Opera:</h2>
+		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
+			method="post">
+			<h4>Opera da eliminare:</h4>
+			<select name="opera">
 				<option th:each="op : ${opere}" th:value="${{op.id}}"
 					th:text="${op.titolo}">Wireframe</option>
 			</select>
 			<button type="submit">Submit</button>
 		</form>
 	</div>
-	
-	<div style="overflow-x:auto;">
-	<h2>Opere presenti nella galleria:</h2>
-	<table class="center">
-		<tr>
-			<th>Nome</th>
-			<th>Tecnica</th>
-			<th>Autore</th>
-			<th>Restauro</th>
-		</tr>
 
-		<tr th:each="opera : ${opere}">
-			<td th:text="${opera.titolo}"></td>
-			<td th:text="${opera.tecnica}"></td>
-			<td>
-				<ul class="the_dropdown">
-					<li><span th:text="${opera.autore.nome}"></span>
-						<ul>
-							<li><a th:text="${opera.autore.cognome}"></a></li>
-							<li><a th:text="${opera.autore.nazionalita}"></a></li>
-							<li><a th:text="${opera.autore.dataNascita}"></a></li>
-							<li><a th:text="${opera.autore.dataMorte}"></a></li>
-						</ul>
-					</li>
-				</ul>
-			</td>
-			<td th:text="${opera.restauro}"></td>
-		</tr>
-	</table>
+	<div style="overflow-x: auto;">
+		<h2>Opere presenti nella galleria:</h2>
+		<table class="center">
+			<tr>
+				<th>Nome</th>
+				<th>Tecnica</th>
+				<th>Autore</th>
+				<th>Restauro</th>
+			</tr>
+
+			<tr th:each="opera : ${opere}">
+				<td th:text="${opera.titolo}"></td>
+				<td th:text="${opera.tecnica}"></td>
+				<td>
+					<ul class="the_dropdown">
+						<li><span th:text="${opera.autore.nome}"></span>
+							<ul>
+								<li><a th:text="${opera.autore.cognome}"></a></li>
+								<li><a th:text="${opera.autore.nazionalita}"></a></li>
+								<li><a th:text="${opera.autore.dataNascita}"></a></li>
+								<li><a th:text="${opera.autore.dataMorte}"></a></li>
+							</ul></li>
+					</ul>
+				</td>
+				<td th:text="${opera.restauro}"></td>
+			</tr>
+		</table>
 	</div>
-	<h1><br/></h1>
+	<h1>
+		<br />
+	</h1>
 
 </body>
 </html>

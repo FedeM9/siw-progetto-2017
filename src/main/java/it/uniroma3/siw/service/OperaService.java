@@ -1,7 +1,5 @@
 package it.uniroma3.siw.service;
 
-import java.util.Date;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,15 +28,15 @@ public class OperaService {
 		return this.operaRepository.findOne(id);
 	}
 
-	public Iterable<Opera> findByNome(String nome){
-		return this.operaRepository.findByNome(nome);
+	public Iterable<Opera> findByTitolo(String titolo){
+		return this.operaRepository.findByTitolo(titolo);
 	}
 
 	public Iterable<Opera> findByAutore(Autore autore){
 		return this.operaRepository.findByAutore(autore);
 	}
 
-	public Iterable<Opera> findByAnno(Date anno){
+	public Iterable<Opera> findByAnno(String anno){
 		return this.operaRepository.findByAnno(anno);
 	}
 
@@ -46,7 +44,7 @@ public class OperaService {
 		return this.operaRepository.findByTecnica(tecnica);
 	}
 
-	public Iterable<Opera> findByRestauro(boolean restauro){
+	public Iterable<Opera> findByRestauro(String restauro){
 		return this.operaRepository.findByRestauro(restauro);
 	}
 
