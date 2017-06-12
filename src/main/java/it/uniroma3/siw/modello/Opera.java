@@ -13,14 +13,6 @@ public class Opera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	@Size(min=1,message="Il campo nome non può essere vuoto")
 	private String titolo;
@@ -30,12 +22,12 @@ public class Opera {
 	private String anno;
 	private String tecnica;
 	private String dimensioni;
-	private boolean restauro;
+	private String restauro;
 	
 	public Opera() {
 	}
 	
-	public Opera(String titolo, Autore autore, String anno, String tecnica, String dimensioni, boolean restauro) {
+	public Opera(String titolo, Autore autore, String anno, String tecnica, String dimensioni, String restauro) {
 		super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -45,6 +37,14 @@ public class Opera {
 		this.restauro = restauro;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public String getTitolo() {
 		return titolo;
 	}
@@ -85,11 +85,11 @@ public class Opera {
 		this.dimensioni = dimensioni;
 	}
 
-	public boolean isRestauro() {
+	public String getRestauro() {
 		return restauro;
 	}
 
-	public void setRestauro(boolean restauro) {
+	public void setRestauro(String restauro) {
 		this.restauro = restauro;
 	}
 	

@@ -34,13 +34,12 @@ public class OperaController {
             return "OperazioniAdmin";
         } else {
         	operaService.add(opera); 
-        	Iterable <Opera> itopere=  operaService.findAll();
+        	Iterable <Opera> itopere = operaService.findAll();
     		List<Opera> opere = new LinkedList<>();
     		for(Opera o : itopere){
     			opere.add(o);
     		}
     		model.addAttribute("opere", opere);
-        	
         }
         return "OperazioniAdmin";
     }
@@ -52,7 +51,7 @@ public class OperaController {
             return "OperazioniAdmin";
         } else {
         	operaService.remove(opera);
-        	Iterable <Opera> itopere=  operaService.findAll();
+        	Iterable <Opera> itopere = operaService.findAll();
     		List<Opera> opere = new LinkedList<>();
     		for(Opera o : itopere){
     			opere.add(o);
@@ -64,7 +63,7 @@ public class OperaController {
     
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
-		Iterable <Opera> itopere=  operaService.findAll();
+		Iterable <Opera> itopere = operaService.findAll();
 		List<Opera> opere = new LinkedList<>();
 		for(Opera o : itopere){
 			opere.add(o);

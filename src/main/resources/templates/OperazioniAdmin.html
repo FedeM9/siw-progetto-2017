@@ -65,6 +65,12 @@
 							th:text="${aut.nome}">Wireframe</option>
 					</select>
 				</div>
+				<div>
+					Restauro: <select name="restauro">
+						<option th:text="Si">Wireframe</option>
+						<option th:text="No">Wireframe</option>
+					</select>
+				</div>
 				<button type="submit">Submit</button>
 			</div>
 		</form>
@@ -90,6 +96,7 @@
 			<th>Nome</th>
 			<th>Tecnica</th>
 			<th>Autore</th>
+			<th>Restauro</th>
 		</tr>
 
 		<tr th:each="opera : ${opere}">
@@ -107,6 +114,7 @@
 					</li>
 				</ul>
 			</td>
+			<td th:text="${opera.restauro}"></td>
 		</tr>
 	</table>
 	</div>

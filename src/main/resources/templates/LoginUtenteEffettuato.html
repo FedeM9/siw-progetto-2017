@@ -23,6 +23,7 @@
 				<th>Nome</th>
 				<th>Tecnica</th>
 				<th>Autore</th>
+				<th>Restauro</th>
 			</tr>
 			<tr th:each="opera : ${opere}">
 				<td th:text="${opera.titolo}"></td>
@@ -39,6 +40,7 @@
 						</li>
 					</ul>
 				</td>
+				<td th:text="${opera.restauro}"></td>
 			</tr>
 		</table>
 	</div>
