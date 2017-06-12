@@ -1,5 +1,8 @@
 package it.uniroma3.siw.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +27,25 @@ public class AutoreController {
         return "form";
     }
 
-    @PostMapping("/autore")
+    @PostMapping("/addAutore")
     public String checkCustomerInfo(@Valid @ModelAttribute Autore autore, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "OperazioniAdmin";
         } else {
-        	model.addAttribute(autore);
+        	
         	autoreService.add(autore); 
         }
-        return "results";
+        return "OperazioniAdmin";
     }
+	@ModelAttribute("autori")
+	public Iterable<Autore> opere(){
+		Iterable <Autore> itAutore=  autoreService.findAll();
+		List<Autore> autori = new LinkedList<>();
+		for(Autore a : itAutore){
+			autori.add(a);
+		}
+		return autori;
+	}
 }

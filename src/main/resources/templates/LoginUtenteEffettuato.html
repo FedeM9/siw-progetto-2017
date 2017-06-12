@@ -3,21 +3,33 @@
 <head>
 <meta charset="ISO-8859-1" />
 <title>Login effettuato</title>
+<link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
-	<p>Accesso Effettuato</p>
+	<h2>
+		Bentornato <span th:text="	${nomeUtente}"> </span>
+	</h2>
 	<div>Le opere nel museo sono:</div>
-	<table>
-		<tr>
-			<th>Nome</th>
-			<th>Tecnica</th>
-			<th>Autore</th>
-		</tr>
-		<tr th:each="op : ${opere}">
-			<td th:text="${op.titolo}"></td>
-			<td th:text="${op.tecnica}"></td>
-			<td th:text="${op.autore}"></td>
-		</tr>
-	</table>
+	<div align="center" >
+
+
+
+		<table border="1" >
+			<tr>
+				<th>Nome</th>
+				<th>Tecnica</th>
+				<th>Autore</th>
+			</tr>
+			<tbody th:each="opera : ${opere}">
+				<tr>
+				<td th:text="${opera.titolo}">${opera.titolo}</td>
+				<td th:text="${opera.tecnica}">${opera.tecnica}</td>
+				<td th:text="${opera.autore}">${opera.autore}</td>
+			</tr>
+	</tbody>
+		</table>
+	</div>
+
+
 </body>
 </html>

@@ -1,5 +1,8 @@
 package it.uniroma3.siw.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +27,30 @@ public class OperaController {
         return "form";
     }
 
-    @PostMapping("/opera")
+    @PostMapping("/addOpera")
     public String checkCustomerInfo(@Valid @ModelAttribute Opera opera, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "OperazioniAdmin";
         } else {
-        	model.addAttribute(opera);
+        	Iterable <Opera> itopere=  operaService.findAll();
+    		List<Opera> opere = new LinkedList<>();
+    		for(Opera o : itopere){
+    			opere.add(o);
+    		}
+    		model.addAttribute("opere", opere);
         	operaService.add(opera); 
         }
-        return "results";
+        return "OperazioniAdmin";
     }
+	@ModelAttribute("opere")
+	public Iterable<Opera> opere(){
+		Iterable <Opera> itopere=  operaService.findAll();
+		List<Opera> opere = new LinkedList<>();
+		for(Opera o : itopere){
+			opere.add(o);
+		}
+		return opere;
+	}
 }

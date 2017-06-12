@@ -35,9 +35,8 @@ public class AdminController {
         	if(adminService.findByUserName(admin.getUsername())==null){
         		 return "LoginAdmin";
         	}else{
-                List<Opera> opere=(List<Opera>) operaService.findAll();
-                model.addAttribute(opere);
-                model.addAttribute(admin);
+
+                model.addAttribute("nomeAdmin",admin.getUsername());
         	}
         }
         return "OperazioniAdmin";

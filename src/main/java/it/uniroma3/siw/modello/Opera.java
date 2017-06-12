@@ -11,6 +11,14 @@ public class Opera {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Size(min=1,message="Il campo nome non può essere vuoto")
 	private String titolo;
 	
@@ -18,12 +26,12 @@ public class Opera {
 	private Autore autore;
 	private Date anno;
 	private String tecnica;
-	private float dimensioni;
+	private String dimensioni;
 	
 	public Opera() {
 	}
 	
-	public Opera(String titolo, Autore autore, Date anno, String tecnica, float dimensioni) {
+	public Opera(String titolo, Autore autore, Date anno, String tecnica, String dimensioni) {
 		super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -64,11 +72,11 @@ public class Opera {
 		this.tecnica = tecnica;
 	}
 
-	public float getDimensioni() {
+	public String getDimensioni() {
 		return dimensioni;
 	}
 
-	public void setDimensioni(float dimensioni) {
+	public void setDimensioni(String dimensioni) {
 		this.dimensioni = dimensioni;
 	}
 	
