@@ -13,16 +13,13 @@ public class Admin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-
-	@Size(min=1)
+	@Size(min=3)
 	private String username;
 	
-
-	@Size(min=1)
+	@Size(min=3)
 	private String password;
 
 	public Admin(){
-		
 	}
 	
 	public Admin(Long id) {
