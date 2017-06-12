@@ -76,7 +76,7 @@
 		<tr th:each="op : ${opere}">
 			<td th:text="${op.titolo}"></td>
 			<td th:text="${op.tecnica}"></td>
-			<td th:text="${op.autore}"></td>
+			<td th:text="${op.autore.nome}"></td>
 		</tr>
 	</table>
 
