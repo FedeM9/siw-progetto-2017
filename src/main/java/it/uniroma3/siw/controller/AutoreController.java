@@ -34,12 +34,13 @@ public class AutoreController {
             return "OperazioniAdmin";
         } else {	
         	autoreService.add(autore); 
+        	model.addAttribute("autori", autori());
         }
         return "OperazioniAdmin";
     }
     
 	@ModelAttribute("autori")
-	public Iterable<Autore> opere(){
+	public Iterable<Autore> autori(){
 		Iterable <Autore> itAutore = autoreService.findAll();
 		List<Autore> autori = new LinkedList<>();
 		for(Autore a : itAutore){
