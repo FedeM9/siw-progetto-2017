@@ -42,6 +42,10 @@ a {
 	color: black;
 }
 
+.transparent {
+	ackground-color: transparent;
+}
+
 .decoration {
 	text-decoration: underline;
 	color: blue;
