@@ -42,6 +42,7 @@ public class AdminController {
 		}
 		return "OperazioniAdmin";
 	}
+	
 	@PostMapping("/adminReg")
 	public String insertNewAdmin(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
 
@@ -54,6 +55,7 @@ public class AdminController {
 
 		return "OperazioniAdmin";
 	}
+	
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
 		Iterable <Opera> itopere=  operaService.findAll();
@@ -63,6 +65,7 @@ public class AdminController {
 		}
 		return opere;
 	}
+	
 	@ModelAttribute("autori")
 	public Iterable<Autore> operi(){
 		Iterable <Autore> itautori=  autoreService.findAll();
