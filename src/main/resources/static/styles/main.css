@@ -23,6 +23,30 @@ h1 {
     margin-right:auto;
 }
 
+table {
+    width: 80%;
+}
+
+th {
+	text-align: center;
+    height: 50px;
+    background-color: #ff8040;
+    /*color: white;*/
+}
+
+td {
+    height: 50px;
+    vertical-align: center;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
+tr:nth-child(odd) {background-color: #c0c0c0}
+tr:hover {background-color: #ffff00}
+
+table, th, td {
+   border: 1px solid black;
+}
+
 .container-center, .container-upper, .corpo {
 	position: absolute;
 	transform: translateX(-50%) translateY(-50%);
