@@ -25,11 +25,22 @@
 				<th>Tecnica</th>
 				<th>Autore</th>
 			</tr>
-				<tr th:each="opera : ${opere}">
-					<td th:text="${opera.titolo}"></td>
-					<td th:text="${opera.tecnica}"></td>
-					<td th:text="${opera.autore.nome}"></td>
-				</tr>
+			<tr th:each="opera : ${opere}">
+				<td th:text="${opera.titolo}"></td>
+				<td th:text="${opera.tecnica}"></td>
+				<td>
+					<ul class="the_dropdown">
+						<li><span th:text="${opera.autore.nome}"></span>
+							<ul>
+								<li><a th:text="${opera.autore.cognome}"></a></li>
+								<li><a th:text="${opera.autore.nazionalita}"></a></li>
+								<li><a th:text="${opera.autore.dataNascita}"></a></li>
+								<li><a th:text="${opera.autore.dataMorte}"></a></li>
+							</ul></li>
+					</ul>
+					<div class="clearfix"></div>
+				</td>
+			</tr>
 		</table>
 	</div>
 

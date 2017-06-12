@@ -93,7 +93,18 @@
 		<tr th:each="op : ${opere}">
 			<td th:text="${op.titolo}"></td>
 			<td th:text="${op.tecnica}"></td>
-			<td th:text="${op.autore.nome}"></td>
+			<td>
+				<ul class="the_dropdown">
+					<li><span th:text="${opera.autore.nome}"></span>
+						<ul>
+							<li><a th:text="${opera.autore.cognome}"></a></li>
+							<li><a th:text="${opera.autore.nazionalita}"></a></li>
+							<li><a th:text="${opera.autore.dataNascita}"></a></li>
+							<li><a th:text="${opera.autore.dataMorte}"></a></li>
+						</ul></li>
+				</ul>
+				<div class="clearfix"></div>
+			</td>
 		</tr>
 	</table>
 	</div>

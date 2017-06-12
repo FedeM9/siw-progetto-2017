@@ -42,33 +42,40 @@ a {
 	color: black;
 }
 
- table.center {
-    margin-left:auto; 
-    margin-right:auto;
+table.center {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 table {
-    width: 80%;
+	width: 80%;
 }
 
 th {
 	text-align: center;
-    height: 50px;
-    background-color: #ff8040;
-    /*color: white;*/
+	height: 50px;
+	background-color: #ff8040;
 }
 
 td {
-    height: 50px;
-    vertical-align: center;
+	height: 50px;
+	vertical-align: center;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2}
-tr:nth-child(odd) {background-color: #c0c0c0}
-tr:hover {background-color: #ffff00}
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+tr:nth-child(odd) {
+	background-color: #c0c0c0
+}
+
+tr:hover {
+	background-color: #ffff00
+}
 
 table, th, td {
-   border: 1px solid black;
+	border: 1px solid black;
 }
 
 .container-center, .container-upper, .corpo {
@@ -86,11 +93,11 @@ table, th, td {
 	left: 50%;
 }
 
-.corpo{
+.corpo {
 	left: 50%;
 }
 
-.menu li{
+.menu li {
 	display: block;
 	float: left;
 	width: 125px;
@@ -104,7 +111,8 @@ table, th, td {
 	background: -o-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
 	background: -ms-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
 }
-.menu li:hover{
+
+.menu li:hover {
 	cursor: pointer;
 	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
 	background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
@@ -112,26 +120,33 @@ table, th, td {
 	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #e5e5e5 100%);
 	color: slateGrey;
 }
-.primo{
+
+.primo {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
-.ultimo{
+
+.ultimo {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
-.sub-menu{
+
+.sub-menu {
 	visibility: hidden;
 }
-.menu li:hover .sub-menu{
+
+.menu li:hover .sub-menu {
 	visibility: visible;
 }
-.sub-menu li{
+
+.sub-menu li {
 	border-top: 1px dotted #2C3E50;
 }
-.sub-menu li:hover{
+
+.sub-menu li:hover {
 	width: 145px;
-	background: -webkit-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%
+		);
 	background: -moz-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
 	background: -o-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
 	background: -ms-radial-gradient(center, ellipse cover, #f7fbfc 10%, #add9e4 100%);
@@ -141,7 +156,37 @@ table, th, td {
 	-o-transition: all 0.1s ease 0s;
 	-ms-transition: all 0.1s ease 0s;
 }
-.ultimo-sub{
+
+.ultimo-sub {
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+}
+
+
+
+
+.the_dropdown {
+	width: 100px;
+}
+
+ul.the_dropdown, .the_dropdown li ul {
+	list-style-type: none;
+}
+
+.the_dropdown li a {
+	color: #000;
+	text-decoration: none;
+	background-color: #80ffff;
+	padding: 5px 10px 1px 10px;
+	display: block;
+}
+
+.the_dropdown li ul {
+	margin-top: 5px;
+	display: none;
+}
+
+.the_dropdown li:hover ul { /* Display the dropdown on hover */
+	display: block;
+	position: absolute;
 }
