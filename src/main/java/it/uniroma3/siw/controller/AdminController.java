@@ -1,5 +1,8 @@
 package it.uniroma3.siw.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.modello.Admin;
+import it.uniroma3.siw.modello.Autore;
+import it.uniroma3.siw.modello.Opera;
 import it.uniroma3.siw.service.AdminService;
+import it.uniroma3.siw.service.AutoreService;
 import it.uniroma3.siw.service.OperaService;
 
 @Controller
@@ -19,7 +25,8 @@ public class AdminController {
 	AdminService adminService;
 	@Autowired
 	OperaService operaService;
-
+	@Autowired
+	AutoreService autoreService;
 
 	@PostMapping("/adminLogin")
 	public String checkUtenteInfo(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
@@ -46,5 +53,23 @@ public class AdminController {
 		}
 
 		return "OperazioniAdmin";
+	}
+	@ModelAttribute("opere")
+	public Iterable<Opera> opere(){
+		Iterable <Opera> itopere=  operaService.findAll();
+		List<Opera> opere = new LinkedList<>();
+		for(Opera o : itopere){
+			opere.add(o);
+		}
+		return opere;
+	}
+	@ModelAttribute("autori")
+	public Iterable<Autore> operi(){
+		Iterable <Autore> itautori=  autoreService.findAll();
+		List<Autore> autori = new LinkedList<>();
+		for(Autore a : itautori){
+			autori.add(a);
+		}
+		return autori;
 	}
 }
