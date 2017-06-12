@@ -32,8 +32,7 @@ public class AutoreController {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
-        } else {
-        	
+        } else {	
         	autoreService.add(autore); 
         }
         return "OperazioniAdmin";

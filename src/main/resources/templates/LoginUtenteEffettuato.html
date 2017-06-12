@@ -6,25 +6,30 @@
 <link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
-	<h2>
-		Bentornato <span th:text="	${nomeUtente}"></span>
-	</h2>
-	<div>Le opere nel museo sono:</div>
+	<div class="corpo">
+		<ul class="menu">
+			<li class="primo"><a href="index.html">Home</a></li>
+			<li><a href="javascript:window.location.reload();">Ricarica</a></li>
+			<li class="ultimo">Contatti</li>
+		</ul>
+	</div>
+	<h1>
+		<br></br>Bentornato <span th:text="	${nomeUtente}"></span>
+	</h1>
+	<h2>Le opere nel museo sono:</h2>
 	<div align="center">
 
-		<table border="1">
+		<table class="center">
 			<tr>
 				<th>Nome</th>
 				<th>Tecnica</th>
 				<th>Autore</th>
 			</tr>
-			<tbody th:each="opera : ${opere}">
-				<tr>
-					<td th:text="${opera.titolo}">${opera.titolo}</td>
-					<td th:text="${opera.tecnica}">${opera.tecnica}</td>
-					<td th:text="${opera.autore}">${opera.autore}</td>
+				<tr th:each="opera : ${opere}">
+					<td th:text="${opera.titolo}"></td>
+					<td th:text="${opera.tecnica}"></td>
+					<td th:text="${opera.autore.nome}"></td>
 				</tr>
-			</tbody>
 		</table>
 	</div>
 
