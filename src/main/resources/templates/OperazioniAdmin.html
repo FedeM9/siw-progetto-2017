@@ -90,9 +90,9 @@
 			<th>Autore</th>
 		</tr>
 
-		<tr th:each="op : ${opere}">
-			<td th:text="${op.titolo}"></td>
-			<td th:text="${op.tecnica}"></td>
+		<tr th:each="opera : ${opere}">
+			<td th:text="${opera.titolo}"></td>
+			<td th:text="${opera.tecnica}"></td>
 			<td>
 				<ul class="the_dropdown">
 					<li><span th:text="${opera.autore.nome}"></span>
@@ -103,7 +103,6 @@
 							<li><a th:text="${opera.autore.dataMorte}"></a></li>
 						</ul></li>
 				</ul>
-				<div class="clearfix"></div>
 			</td>
 		</tr>
 	</table>
