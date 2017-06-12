@@ -44,6 +44,29 @@ public class OperaController {
         return "OperazioniAdmin";
     }
     
+    @PostMapping("/updateOpera")
+    public String updateOpera(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
+    	
+        if (bindingResult.hasErrors()) {
+            return "OperazioniAdmin";
+        } else {
+        	//TODO SISTEMARE METODO 
+        	operaService.findbyId(opera.getId()); 
+        	Iterable <Opera> itopere = operaService.findAll();
+    		List<Opera> opere = new LinkedList<>();
+    		for(Opera o : itopere){
+    			opere.remove(o);
+    			if(o.getRestauro().equals("Si"))
+    				o.setRestauro("No");
+    			else
+    				o.setRestauro("Si");
+    			opere.add(o);
+    		}
+    		model.addAttribute("opere", opere);
+        }
+        return "OperazioniAdmin";
+    }
+    
     @PostMapping("/removeOpera")
     public String operaRemove(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
     	

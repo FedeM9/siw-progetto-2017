@@ -9,10 +9,10 @@ import it.uniroma3.siw.modello.Autore;
 import it.uniroma3.siw.modello.Opera;
 
 public interface OperaRepository extends CrudRepository<Opera, Long>{
-	
 
-	  List<Opera> findByAutore(Autore autore);
-	  List<Opera> findByAnno(Date anno);
-	  List<Opera> findByTecnica(String tecnica);
-	  List<Opera> findByRestauro(Boolean restauro);
+	List<Opera> findByNome(String nome);
+	List<Opera> findByAutore(Autore autore);
+	List<Opera> findByAnno(Date anno);
+	List<Opera> findByTecnica(String tecnica);
+	List<Opera> findByRestauro(Boolean restauro);
 }

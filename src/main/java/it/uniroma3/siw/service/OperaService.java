@@ -13,31 +13,35 @@ import it.uniroma3.siw.repository.OperaRepository;
 
 @Service
 public class OperaService {
-	
+
 	@Autowired
 	private OperaRepository operaRepository;
-	
-    public Iterable<Opera> findAll() {
-        return this.operaRepository.findAll();
-    }
 
-	public Iterable<Opera> findByAutore(Autore autore){
-		return this.operaRepository.findByAutore(autore);
+	public Iterable<Opera> findAll() {
+		return this.operaRepository.findAll();
 	}
-    
-    @Transactional
-    public void add(final Opera opera) {
-        this.operaRepository.save(opera);
-    }
+
+	@Transactional
+	public void add(final Opera opera) {
+		this.operaRepository.save(opera);
+	}
 
 	public Opera findbyId(Long id) {
 		return this.operaRepository.findOne(id);
 	}
-	
+
+	public Iterable<Opera> findByNome(String nome){
+		return this.operaRepository.findByNome(nome);
+	}
+
+	public Iterable<Opera> findByAutore(Autore autore){
+		return this.operaRepository.findByAutore(autore);
+	}
+
 	public Iterable<Opera> findByAnno(Date anno){
 		return this.operaRepository.findByAnno(anno);
 	}
-	
+
 	public Iterable<Opera> findByTecnica(String tecnica){
 		return this.operaRepository.findByTecnica(tecnica);
 	}
@@ -45,11 +49,11 @@ public class OperaService {
 	public Iterable<Opera> findByRestauro(boolean restauro){
 		return this.operaRepository.findByRestauro(restauro);
 	}
-	
+
 
 	public void remove(Opera opera) {
 		opera=findbyId(opera.getId());
 		operaRepository.delete(opera);
 	}
-	
+
 }
