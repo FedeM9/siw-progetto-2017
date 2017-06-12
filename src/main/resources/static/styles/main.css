@@ -42,6 +42,11 @@ a {
 	color: black;
 }
 
+.decoration {
+	text-decoration: underline;
+	color: blue;
+}
+
 table.center {
 	margin-left: auto;
 	margin-right: auto;

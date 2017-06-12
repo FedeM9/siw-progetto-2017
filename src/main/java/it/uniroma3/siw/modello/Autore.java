@@ -22,7 +22,9 @@ public class Autore {
 	private String nome;
 	private String cognome;
 	private String nazionalita;
+	@Temporal(TemporalType.DATE)
 	private Date dataNascita;
+	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
 
 	public Autore() {
