@@ -42,5 +42,12 @@ public class OperaService {
 	public Iterable<Opera> findByTecnica(String tecnica){
 		return this.operaRepository.findByTecnica(tecnica);
 	}
+
+
+
+	public void remove(Opera opera) {
+		opera=findbyId(opera.getId());
+		operaRepository.delete(opera);
+	}
 	
 }

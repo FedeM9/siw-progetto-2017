@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1" />
+<meta charset="UTF-8" />
 <title>Gestione amministratore</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
 						name="cognome" /></span>
 				</div>
 				<div>
-					<span>Nazionalità: <input type="text" id="nazionalita"
+					<span>NazionalitÃ : <input type="text" id="nazionalita"
 						name="nazionalita" /></span>
 				</div>
 				<div>
@@ -39,33 +39,32 @@
 
 	</div>
 
-	
-		<h2>Inserisci Opera:</h2>
-		<div>
+
+	<h2>Inserisci Opera:</h2>
+	<div>
 		<form name="a" th:action="@{/addOpera}" th:object="${opera}"
 			method="post">
 			<div>
 				<div>
 					<span>Titolo: <input type="text" id="titolo" name="titolo" /></span>
-					
+
 				</div>
 				<div>
 					<span>Tecnica: <input type="text" id="tecnica"
 						name="tecnica" /></span>
-						
+
 				</div>
 				<div>
 					<span>Anno: <input type="text" id="anno" name="anno" /></span>
-					
+
 				</div>
 				<div>
 					<span>Dimensioni: <input type="text" id="dimensioni"
 						name="dimensioni" /></span>
-						
+
 				</div>
 				<div>
-				Autore:
-					<select name="autore">
+					Autore: <select name="autore">
 						<option th:each="aut : ${autori}" th:value="${{aut.id}}"
 							th:text="${aut.nome}">Wireframe</option>
 					</select>
@@ -74,21 +73,32 @@
 			</div>
 		</form>
 
-</div>
+	</div>
 
+	<h2>Opera:</h2>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>Tecnica</th>
+			<th>Autore</th>
+		</tr>
 
-		<table>
-			<tr>
-				<th>Nome</th>
-				<th>Tecnica</th>
-				<th>Autore</th>
-			</tr>
+		<tr th:each="op : ${opere}">
+			<td th:text="${op.titolo}"></td>
+			<td th:text="${op.tecnica}"></td>
+			<td th:text="${op.autore}"></td>
+		</tr>
+	</table>
 
-			<tr th:each="op : ${opere}">
-				<td th:text="${op.titolo}"></td>
-				<td th:text="${op.tecnica}"></td>
-				<td th:text="${op.autore}"></td>
-			</tr>
-		</table>
+	<h2>EliminaOpera:</h2>
+	<div>
+			<form name="a" th:action="@{/removeOpera}" th:object="${opera}"	method="post">
+		Opera da eliminare: <select name="opera">
+			<option th:each="op : ${opere}" th:value="${{op.id}}"
+				th:text="${op.titolo}">Wireframe</option>
+		</select>
+		<button type="submit">Submit</button>
+		</form>
+	</div>
 </body>
 </html>

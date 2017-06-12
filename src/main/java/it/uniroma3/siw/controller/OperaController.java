@@ -28,13 +28,31 @@ public class OperaController {
     }
 
     @PostMapping("/addOpera")
-    public String checkCustomerInfo(@Valid @ModelAttribute Opera opera, 
+    public String checkOperaAdd(@Valid @ModelAttribute Opera opera, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
         } else {
         	operaService.add(opera); 
+        	Iterable <Opera> itopere=  operaService.findAll();
+    		List<Opera> opere = new LinkedList<>();
+    		for(Opera o : itopere){
+    			opere.add(o);
+    		}
+    		model.addAttribute("opere", opere);
+        	
+        }
+        return "OperazioniAdmin";
+    }
+    @PostMapping("/removeOpera")
+    public String operaRemove(@Valid @ModelAttribute Opera opera, 
+    									BindingResult bindingResult, Model model) {
+    	
+        if (bindingResult.hasErrors()) {
+            return "OperazioniAdmin";
+        } else {
+        	operaService.remove(opera);
         	Iterable <Opera> itopere=  operaService.findAll();
     		List<Opera> opere = new LinkedList<>();
     		for(Opera o : itopere){
