@@ -8,12 +8,13 @@
 </head>
 <body>
 	<div class="corpo">
-		<ul class="menu">
-			<li class="primo"><a href="index.html">Home</a></li>
-			<li><a href="javascript:window.location.reload();">Ricarica</a></li>
-			<li><a th:action="@{/reload}" method="post">Ricarica2</a></li>
-			<li class="ultimo">Contatti</li>
-		</ul>
+		<form id="f" th:action="@{/reload}" method="post">
+			<ul class="menu">
+				<li class="primo"><a href="index.html">Home</a></li>
+				<li onclick="f.submit();">Ricarica</li>
+				<li class="ultimo">Contatti</li>
+			</ul>
+		</form>
 	</div>
 	<h1>
 		<br></br>Bentornato <span th:text="	${nomeAdmin}"></span>
