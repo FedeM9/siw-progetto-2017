@@ -92,12 +92,13 @@
 
 	<h2>EliminaOpera:</h2>
 	<div>
-			<form name="a" th:action="@{/removeOpera}" th:object="${opera}"	method="post">
-		Opera da eliminare: <select name="opera">
-			<option th:each="op : ${opere}" th:value="${{op.id}}"
-				th:text="${op.titolo}">Wireframe</option>
-		</select>
-		<button type="submit">Submit</button>
+		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
+			method="post">
+			Opera da eliminare: <select name="opera">
+				<option th:each="op : ${opere}" th:value="${{op.id}}"
+					th:text="${op.titolo}">Wireframe</option>
+			</select>
+			<button type="submit">Submit</button>
 		</form>
 	</div>
 </body>

@@ -1,7 +1,5 @@
 package it.uniroma3.siw.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.modello.Admin;
-import it.uniroma3.siw.modello.Opera;
-import it.uniroma3.siw.modello.Utente;
 import it.uniroma3.siw.service.AdminService;
 import it.uniroma3.siw.service.OperaService;
-import it.uniroma3.siw.service.UtenteService;
 
 @Controller
 public class AdminController {
@@ -24,33 +19,32 @@ public class AdminController {
 	AdminService adminService;
 	@Autowired
 	OperaService operaService;
-	
-	
+
+
 	@PostMapping("/adminLogin")
-    public String checkUtenteInfo(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
-    	
-        if (bindingResult.hasErrors()) {
-            return "LoginAdmin"; //in caso di errore 
-        }else{
-        	if(adminService.findByUserName(admin.getUsername())==null){
-        		 return "LoginAdmin";
-        	}else{
+	public String checkUtenteInfo(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
 
-                model.addAttribute("nomeAdmin",admin.getUsername());
-        	}
-        }
-        return "OperazioniAdmin";
-    }
+		if (bindingResult.hasErrors()) {
+			return "LoginAdmin"; //in caso di errore 
+		} else {
+			if(adminService.findByUserName(admin.getUsername())==null) {
+				return "LoginAdmin";
+			} else {
+				model.addAttribute("nomeAdmin",admin.getUsername());
+			}
+		}
+		return "OperazioniAdmin";
+	}
 	@PostMapping("/adminReg")
-    public String insertNewAdmin(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
-    	
-        if (bindingResult.hasErrors()) {
-            return "RegistrazioneAdmin"; //in caso di errore 
-        } else {
-        	model.addAttribute(admin);
-        	adminService.add(admin); 
-        }
+	public String insertNewAdmin(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
 
-        return "OperazioniAdmin";
-    }
+		if (bindingResult.hasErrors()) {
+			return "RegistrazioneAdmin"; //in caso di errore 
+		} else {
+			model.addAttribute(admin);
+			adminService.add(admin); 
+		}
+
+		return "OperazioniAdmin";
+	}
 }

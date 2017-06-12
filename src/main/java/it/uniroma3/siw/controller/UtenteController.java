@@ -23,32 +23,34 @@ public class UtenteController {
 	UtenteService utenteService;
 	@Autowired
 	OperaService operaService;
-	
-	@PostMapping("/utenteLogin")
-    public String checkUtenteInfo(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
-    	
-        if (bindingResult.hasErrors()) {
-            return "Error"; //in caso di errore 
-        }else{
-        	if(utenteService.findByUserName(utente.getUsername())==null){
-        		 return "LoginUtente";
-        	}
-        }
 
-        model.addAttribute("nomeUtente",utente.getUsername());
-        return "LoginUtenteEffettuato";
-    }
+	@PostMapping("/utenteLogin")
+	public String checkUtenteInfo(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
+
+		if (bindingResult.hasErrors()) {
+			return "Error"; //in caso di errore 
+		}else{
+			if(utenteService.findByUserName(utente.getUsername())==null){
+				return "LoginUtente";
+			}
+		}
+
+		model.addAttribute("nomeUtente",utente.getUsername());
+		return "LoginUtenteEffettuato";
+	}
+	
 	@PostMapping("/utenteReg")
-    public String insertNewUtente(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
-    	
-        if (bindingResult.hasErrors()) {
-            return "Error"; //in caso di errore 
-        } else {
-        	 model.addAttribute("nomeUtente",utente.getUsername());
-        	utenteService.add(utente); 
-        }
-        return "LoginUtenteEffettuato";
-    }
+	public String insertNewUtente(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
+
+		if (bindingResult.hasErrors()) {
+			return "Error"; //in caso di errore 
+		} else {
+			model.addAttribute(utente);
+			utenteService.add(utente); 
+		}
+		return "LoginUtenteEffettuato";
+	}
+	
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
 		Iterable <Opera> itopere=  operaService.findAll();

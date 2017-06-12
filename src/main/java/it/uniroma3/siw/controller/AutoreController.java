@@ -28,8 +28,7 @@ public class AutoreController {
     }
 
     @PostMapping("/addAutore")
-    public String checkCustomerInfo(@Valid @ModelAttribute Autore autore, 
-    									BindingResult bindingResult, Model model) {
+    public String checkCustomerInfo(@Valid @ModelAttribute Autore autore, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
@@ -39,9 +38,10 @@ public class AutoreController {
         }
         return "OperazioniAdmin";
     }
+    
 	@ModelAttribute("autori")
 	public Iterable<Autore> opere(){
-		Iterable <Autore> itAutore=  autoreService.findAll();
+		Iterable <Autore> itAutore = autoreService.findAll();
 		List<Autore> autori = new LinkedList<>();
 		for(Autore a : itAutore){
 			autori.add(a);
