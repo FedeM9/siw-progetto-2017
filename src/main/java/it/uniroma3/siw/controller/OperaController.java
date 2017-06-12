@@ -28,8 +28,7 @@ public class OperaController {
     }
 
     @PostMapping("/addOpera")
-    public String checkOperaAdd(@Valid @ModelAttribute Opera opera, 
-    									BindingResult bindingResult, Model model) {
+    public String checkOperaAdd(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
@@ -45,9 +44,9 @@ public class OperaController {
         }
         return "OperazioniAdmin";
     }
+    
     @PostMapping("/removeOpera")
-    public String operaRemove(@Valid @ModelAttribute Opera opera, 
-    									BindingResult bindingResult, Model model) {
+    public String operaRemove(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
@@ -59,10 +58,10 @@ public class OperaController {
     			opere.add(o);
     		}
     		model.addAttribute("opere", opere);
-        	
         }
         return "OperazioniAdmin";
     }
+    
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
 		Iterable <Opera> itopere=  operaService.findAll();

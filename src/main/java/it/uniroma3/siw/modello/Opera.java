@@ -1,7 +1,10 @@
 package it.uniroma3.siw.modello;
 
-import java.util.Date;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 
@@ -27,17 +30,19 @@ public class Opera {
 	private String anno;
 	private String tecnica;
 	private String dimensioni;
+	private boolean restauro;
 	
 	public Opera() {
 	}
 	
-	public Opera(String titolo, Autore autore, String anno, String tecnica, String dimensioni) {
+	public Opera(String titolo, Autore autore, String anno, String tecnica, String dimensioni, boolean restauro) {
 		super();
 		this.titolo = titolo;
 		this.autore = autore;
 		this.anno = anno;
 		this.tecnica = tecnica;
 		this.dimensioni = dimensioni;
+		this.restauro = restauro;
 	}
 
 	public String getTitolo() {
@@ -78,6 +83,14 @@ public class Opera {
 
 	public void setDimensioni(String dimensioni) {
 		this.dimensioni = dimensioni;
+	}
+
+	public boolean isRestauro() {
+		return restauro;
+	}
+
+	public void setRestauro(boolean restauro) {
+		this.restauro = restauro;
 	}
 	
 }

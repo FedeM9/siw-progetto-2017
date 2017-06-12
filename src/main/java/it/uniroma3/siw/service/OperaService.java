@@ -1,7 +1,6 @@
 package it.uniroma3.siw.service;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -43,7 +42,10 @@ public class OperaService {
 		return this.operaRepository.findByTecnica(tecnica);
 	}
 
-
+	public Iterable<Opera> findByRestauro(boolean restauro){
+		return this.operaRepository.findByRestauro(restauro);
+	}
+	
 
 	public void remove(Opera opera) {
 		opera=findbyId(opera.getId());
