@@ -39,24 +39,29 @@
 
 	</div>
 
-	<div>
+	
 		<h2>Inserisci Opera:</h2>
+		<div>
 		<form name="a" th:action="@{/addOpera}" th:object="${opera}"
 			method="post">
 			<div>
 				<div>
-					<span>Nome: <input type="text" id="nome" name="nome" /></span>
+					<span>Titolo: <input type="text" id="titolo" name="titolo" /></span>
+					
 				</div>
 				<div>
 					<span>Tecnica: <input type="text" id="tecnica"
 						name="tecnica" /></span>
+						
 				</div>
 				<div>
 					<span>Anno: <input type="text" id="anno" name="anno" /></span>
+					
 				</div>
 				<div>
-					<span>Dimensioni: <input type="date" id="dimensioni"
+					<span>Dimensioni: <input type="text" id="dimensioni"
 						name="dimensioni" /></span>
+						
 				</div>
 				<div>
 				Autore:

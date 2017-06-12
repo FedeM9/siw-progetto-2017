@@ -34,13 +34,14 @@ public class OperaController {
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
         } else {
+        	operaService.add(opera); 
         	Iterable <Opera> itopere=  operaService.findAll();
     		List<Opera> opere = new LinkedList<>();
     		for(Opera o : itopere){
     			opere.add(o);
     		}
     		model.addAttribute("opere", opere);
-        	operaService.add(opera); 
+        	
         }
         return "OperazioniAdmin";
     }

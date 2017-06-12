@@ -24,14 +24,14 @@ public class Opera {
 	
 	@OneToOne
 	private Autore autore;
-	private Date anno;
+	private String anno;
 	private String tecnica;
 	private String dimensioni;
 	
 	public Opera() {
 	}
 	
-	public Opera(String titolo, Autore autore, Date anno, String tecnica, String dimensioni) {
+	public Opera(String titolo, Autore autore, String anno, String tecnica, String dimensioni) {
 		super();
 		this.titolo = titolo;
 		this.autore = autore;
@@ -56,11 +56,11 @@ public class Opera {
 		this.autore = autore;
 	}
 
-	public Date getAnno() {
+	public String getAnno() {
 		return anno;
 	}
 
-	public void setAnno(Date anno) {
+	public void setAnno(String anno) {
 		this.anno = anno;
 	}
 
