@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>Gestione amministratore</title>
+<link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
 	<h1>
@@ -11,27 +12,22 @@
 
 	<div>
 		<h2>Inserisci Autore:</h2>
-		<form name="a" th:action="@{/addAutore}" th:object="${autore}"
-			method="post">
+		<form name="a" th:action="@{/addAutore}" th:object="${autore}" method="post">
 			<div>
 				<div>
 					<span>Nome: <input type="text" id="nome" name="nome" /></span>
 				</div>
 				<div>
-					<span>Cognome: <input type="text" id="cognome"
-						name="cognome" /></span>
+					<span>Cognome: <input type="text" id="cognome" name="cognome" /></span>
 				</div>
 				<div>
-					<span>Nazionalità: <input type="text" id="nazionalita"
-						name="nazionalita" /></span>
+					<span>Nazionalità: <input type="text" id="nazionalita" name="nazionalita" /></span>
 				</div>
 				<div>
-					<span>Data di Nascita: <input type="date" id="datadinascita"
-						name="data_nascita" /></span>
+					<span>Data di Nascita: <input type="date" id="datadinascita" name="data_nascita" /></span>
 				</div>
 				<div>
-					<span>Data di Morte: <input type="date" id="datadimorte"
-						name="data_morte" /></span>
+					<span>Data di Morte: <input type="date" id="datadimorte" name="data_morte" /></span>
 				</div>
 				<button type="submit">Submit</button>
 			</div>
@@ -47,21 +43,15 @@
 			<div>
 				<div>
 					<span>Titolo: <input type="text" id="titolo" name="titolo" /></span>
-
 				</div>
 				<div>
-					<span>Tecnica: <input type="text" id="tecnica"
-						name="tecnica" /></span>
-
+					<span>Tecnica: <input type="text" id="tecnica" name="tecnica" /></span>
 				</div>
 				<div>
 					<span>Anno: <input type="text" id="anno" name="anno" /></span>
-
 				</div>
 				<div>
-					<span>Dimensioni: <input type="text" id="dimensioni"
-						name="dimensioni" /></span>
-
+					<span>Dimensioni: <input type="text" id="dimensioni" name="dimensioni" /></span>
 				</div>
 				<div>
 					Autore: <select name="autore">
@@ -76,7 +66,7 @@
 	</div>
 
 	<h2>Opera:</h2>
-	<table>
+	<table class="center">
 		<tr>
 			<th>Nome</th>
 			<th>Tecnica</th>
@@ -92,8 +82,7 @@
 
 	<h2>EliminaOpera:</h2>
 	<div>
-		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
-			method="post">
+		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"	method="post">
 			Opera da eliminare: <select name="opera">
 				<option th:each="op : ${opere}" th:value="${{op.id}}"
 					th:text="${op.titolo}">Wireframe</option>

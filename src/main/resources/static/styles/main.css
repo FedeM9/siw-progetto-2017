@@ -6,7 +6,7 @@ body {
 	background-image: url("http://i.imgur.com/Nbi7bYI.jpg");
 }
 
-div, h1, h2, h3, h4, h5, h6 {
+div, h1, h2, h3, h4, h5, h6, table {
 	text-align: center;
 	font-family: 'Playfair Display';
 	font-size: 1.25em;
@@ -16,6 +16,11 @@ h1 {
 	font-family: 'Patrick Hand SC';
 	font-size: 5em;
 	font-color: red;
+}
+
+ table.center {
+    margin-left:auto; 
+    margin-right:auto;
 }
 
 .container-center, .container-upper, .corpo {
