@@ -7,8 +7,15 @@
 <link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
+	<div class="corpo">
+		<ul class="menu">
+			<li class="primo"><a href="index.html">Home</a></li>
+			<li><a href="javascript:window.location.reload();">Ricarica</a></li>
+			<li class="ultimo">Contatti</li>
+		</ul>
+	</div>
 	<h1>
-		Bentornato <span th:text="	${nomeAdmin}"></span>
+		<br></br>Bentornato <span th:text="	${nomeAdmin}"></span>
 	</h1>
 	<div>
 		<h2>Inserisci Autore:</h2>
@@ -32,11 +39,10 @@
 				<button type="submit">Submit</button>
 			</div>
 		</form>
-
 	</div>
 
-	<h2>Inserisci Opera:</h2>
 	<div>
+	<h2>Inserisci Opera:</h2>
 		<form name="a" th:action="@{/addOpera}" th:object="${opera}" method="post">
 			<div>
 				<div>
@@ -63,23 +69,20 @@
 
 	</div>
 
-	<h2>EliminaOpera:</h2>
+	
 	<div>
+	<h2>Elimina Opera:</h2>
 		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"	method="post">
-			Opera da eliminare: <select name="opera">
+			<h4>Opera da eliminare: </h4><select name="opera">
 				<option th:each="op : ${opere}" th:value="${{op.id}}"
 					th:text="${op.titolo}">Wireframe</option>
 			</select>
 			<button type="submit">Submit</button>
 		</form>
 	</div>
-
-
-
-
-
-	<h2>Opera:</h2>
+	
 	<div style="overflow-x:auto;">
+	<h2>Opere presenti nella galleria:</h2>
 	<table class="center">
 		<tr>
 			<th>Nome</th>

@@ -9,13 +9,37 @@ body {
 div, h1, h2, h3, h4, h5, h6, table {
 	text-align: center;
 	font-family: 'Playfair Display';
-	font-size: 1.25em;
 }
 
 h1 {
 	font-family: 'Patrick Hand SC';
 	font-size: 5em;
 	font-color: red;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+div, h3, table {
+	font-size: 1.25em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.75em;
+}
+
+h6 {
+	font-size: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }
 
  table.center {
@@ -61,8 +85,6 @@ table, th, td {
 	top: 25%;
 	left: 50%;
 }
-
-
 
 .corpo{
 	left: 50%;
