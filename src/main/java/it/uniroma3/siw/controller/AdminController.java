@@ -56,6 +56,11 @@ public class AdminController {
 		return "OperazioniAdmin";
 	}
 	
+	@PostMapping("/reload")
+	public String reload(@Valid @ModelAttribute Admin admin, BindingResult bindingResult, Model model) {
+		return "OperazioniAdmin";
+	}
+	
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
 		Iterable <Opera> itopere=  operaService.findAll();
