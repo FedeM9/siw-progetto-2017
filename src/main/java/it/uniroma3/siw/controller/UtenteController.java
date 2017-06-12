@@ -53,7 +53,7 @@ public class UtenteController {
 	
 	@ModelAttribute("opere")
 	public Iterable<Opera> opere(){
-		Iterable <Opera> itopere=  operaService.findAll();
+		Iterable <Opera> itopere = operaService.findAll();
 		List<Opera> opere = new LinkedList<>();
 		for(Opera o : itopere){
 			opere.add(o);

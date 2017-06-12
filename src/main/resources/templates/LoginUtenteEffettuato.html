@@ -7,14 +7,12 @@
 </head>
 <body>
 	<h2>
-		Bentornato <span th:text="	${nomeUtente}"> </span>
+		Bentornato <span th:text="	${nomeUtente}"></span>
 	</h2>
 	<div>Le opere nel museo sono:</div>
-	<div align="center" >
+	<div align="center">
 
-
-
-		<table border="1" >
+		<table border="1">
 			<tr>
 				<th>Nome</th>
 				<th>Tecnica</th>
@@ -22,14 +20,13 @@
 			</tr>
 			<tbody th:each="opera : ${opere}">
 				<tr>
-				<td th:text="${opera.titolo}">${opera.titolo}</td>
-				<td th:text="${opera.tecnica}">${opera.tecnica}</td>
-				<td th:text="${opera.autore}">${opera.autore}</td>
-			</tr>
-	</tbody>
+					<td th:text="${opera.titolo}">${opera.titolo}</td>
+					<td th:text="${opera.tecnica}">${opera.tecnica}</td>
+					<td th:text="${opera.autore}">${opera.autore}</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
-
 
 </body>
 </html>
