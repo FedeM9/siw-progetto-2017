@@ -43,7 +43,7 @@ a {
 }
 
 .transparent {
-	ackground-color: transparent;
+	background-color: transparent;
 }
 
 .decoration {
@@ -79,7 +79,7 @@ tr:nth-child(odd) {
 	background-color: #c0c0c0
 }
 
-tr:hover {
+tr:not(.donthover):hover {
 	background-color: #ffff00
 }
 

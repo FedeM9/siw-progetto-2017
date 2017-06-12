@@ -95,20 +95,32 @@
 				</div>
 			</th>
 		</tr>
+
+		<tr>
+			<th><h2>Elimina Opera:</h2></th>
+			<th><h2>Aggiorna Opera:</h2></th>
+		</tr>
+
+		<tr>
+			<th class="transparent">
+				<div>
+					<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
+						method="post">
+						<h4>Opera da eliminare:</h4>
+						<select name="opera">
+							<option th:each="op : ${opere}" th:value="${{op.id}}"
+								th:text="${op.titolo}">Wireframe</option>
+						</select>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</th>
+			<th class="transparent">Da implementare</th>
+		</tr>
+
 	</table>
 
-	<div>
-		<h2>Elimina Opera:</h2>
-		<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
-			method="post">
-			<h4>Opera da eliminare:</h4>
-			<select name="opera">
-				<option th:each="op : ${opere}" th:value="${{op.id}}"
-					th:text="${op.titolo}">Wireframe</option>
-			</select>
-			<button type="submit">Submit</button>
-		</form>
-	</div>
+
 
 	<div style="overflow-x: auto;">
 		<h2>Opere presenti nella galleria:</h2>
