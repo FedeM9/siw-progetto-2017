@@ -79,7 +79,7 @@ tr:nth-child(odd) {
 	background-color: #c0c0c0
 }
 
-tr:not(.donthover):hover {
+tr.yellow:hover {
 	background-color: #ffff00
 }
 
