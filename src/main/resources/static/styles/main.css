@@ -109,7 +109,7 @@ table, th, td {
 .menu li {
 	display: block;
 	float: left;
-	width: 125px;
+	width: 150px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
@@ -119,7 +119,11 @@ table, th, td {
 	background: -moz-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
 	background: -o-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
 	background: -ms-linear-gradient(top, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	
+	padding: 0px;
 }
+
+.menu li a { margin: 0px; display: block; width: 100%; height: 100%; }
 
 .menu li:hover {
 	cursor: pointer;

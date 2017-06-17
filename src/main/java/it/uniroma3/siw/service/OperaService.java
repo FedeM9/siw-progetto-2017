@@ -1,7 +1,5 @@
 package it.uniroma3.siw.service;
 
-import java.util.Iterator;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
