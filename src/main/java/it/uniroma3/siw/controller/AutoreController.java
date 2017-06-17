@@ -32,7 +32,11 @@ public class AutoreController {
     	
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
-        } else {	
+        } else {
+        	for(Autore a: autoreService.findByCognome(autore.getCognome())){
+        		if(a.getNome().equals(autore.getNome()))
+        			return "OperazioniAdmin";
+        	}
         	autoreService.add(autore); 
         	model.addAttribute("autori", autori());
         }

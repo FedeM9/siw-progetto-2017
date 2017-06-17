@@ -1,5 +1,7 @@
 package it.uniroma3.siw.service;
 
+import java.util.Iterator;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,10 @@ public class OperaService {
 	public Iterable<Opera> findByRestauro(String restauro){
 		return this.operaRepository.findByRestauro(restauro);
 	}
-
+	
+	public void update(Opera opera){
+		 this.operaRepository.save(opera);
+	}
 
 	public void remove(Opera opera) {
 		opera=findbyId(opera.getId());

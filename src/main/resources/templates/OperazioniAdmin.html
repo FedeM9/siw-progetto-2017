@@ -116,14 +116,14 @@
 			<th class="transparent">
 				<div>->->-> Da implementare ->->-></div>
 				<div>
-					<form name="a" th:action="@{/removeOpera}" th:object="${opera}"
+					<form name="a" th:action="@{/updateOpera}" th:object="${opera}"
 						method="post">
 						Opera da aggiornare: <select name="opera">
 							<option th:each="op : ${opere}" th:value="${{op.id}}"
 								th:text="${op.titolo}">Wireframe</option>
 						</select> <br />Restauro: <select name="restauro">
-							<option th:text="Si">Wireframe</option>
-							<option th:text="No">Wireframe</option>
+							<option th:name="scelta"   th:text="Si" th:value="Si">Wireframe</option>
+							<option th:name="scelta" th:text="No" th:value="No">Wireframe</option>
 						</select> <br />
 						<button type="submit">Submit</button>
 					</form>
@@ -150,7 +150,7 @@
 				<td th:text="${opera.tecnica}"></td>
 				<td>
 					<ul class="the_dropdown">
-						<li><span th:text="${opera.autore.nome}"></span>
+						<li><span th:text="${opera.autore.cognome}"></span>
 							<ul>
 								<li><a th:text="${opera.autore.cognome}"></a></li>
 								<li><a th:text="${opera.autore.nazionalita}"></a></li>

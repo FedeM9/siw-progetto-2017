@@ -51,18 +51,14 @@ public class OperaController {
             return "OperazioniAdmin";
         } else {
         	//TODO SISTEMARE METODO 
-        	operaService.findbyId(opera.getId()); 
-        	Iterable <Opera> itopere = operaService.findAll();
-    		List<Opera> opere = new LinkedList<>();
-    		for(Opera o : itopere){
-    			opere.remove(o);
-    			if(o.getRestauro().equals("Si"))
-    				o.setRestauro("No");
+        
+
+    			if(opera.getRestauro().equals("Si"))
+    				opera.setRestauro("No");
     			else
-    				o.setRestauro("Si");
-    			opere.add(o);
-    		}
-    		model.addAttribute("opere", opere);
+    				opera.setRestauro("Si");
+    			this.operaService.add(opera);
+    		model.addAttribute("opere", opere());
         }
         return "OperazioniAdmin";
     }
@@ -73,13 +69,10 @@ public class OperaController {
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
         } else {
+        
         	operaService.remove(opera);
-        	Iterable <Opera> itopere = operaService.findAll();
-    		List<Opera> opere = new LinkedList<>();
-    		for(Opera o : itopere){
-    			opere.add(o);
-    		}
-    		model.addAttribute("opere", opere);
+       
+    		model.addAttribute("opere", opere());
         }
         return "OperazioniAdmin";
     }

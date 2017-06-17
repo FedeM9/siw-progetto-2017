@@ -24,6 +24,7 @@ public class UtenteController {
 	@Autowired
 	OperaService operaService;
 
+	
 	@PostMapping("/utenteLogin")
 	public String checkUtenteInfo(@Valid @ModelAttribute Utente utente, BindingResult bindingResult, Model model) {
 
