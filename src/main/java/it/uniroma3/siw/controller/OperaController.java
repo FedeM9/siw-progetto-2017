@@ -50,14 +50,8 @@ public class OperaController {
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
         } else {
-        	//TODO SISTEMARE METODO 
-        
-
-    			if(opera.getRestauro().equals("Si"))
-    				opera.setRestauro("No");
-    			else
-    				opera.setRestauro("Si");
-    			this.operaService.add(opera);
+        	opera.setRestauro(opera.getRestauro());
+    		this.operaService.add(opera);
     		model.addAttribute("opere", opere());
         }
         return "OperazioniAdmin";
@@ -69,9 +63,7 @@ public class OperaController {
         if (bindingResult.hasErrors()) {
             return "OperazioniAdmin";
         } else {
-        
         	operaService.remove(opera);
-       
     		model.addAttribute("opere", opere());
         }
         return "OperazioniAdmin";

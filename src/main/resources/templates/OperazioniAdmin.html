@@ -76,7 +76,7 @@
 						<div>
 							Autore: <select name="autore">
 								<option th:each="aut : ${autori}" th:value="${{aut.id}}"
-									th:text="${aut.nome}">Wireframe</option>
+									th:text="${aut.nome} + ' ' + ${aut.cognome}">Wireframe</option>
 							</select>
 						</div>
 						<div>
@@ -114,7 +114,6 @@
 				</div>
 			</th>
 			<th class="transparent">
-				<div>->->-> Da implementare ->->-></div>
 				<div>
 					<form name="a" th:action="@{/updateOpera}" th:object="${opera}"
 						method="post">
@@ -150,9 +149,8 @@
 				<td th:text="${opera.tecnica}"></td>
 				<td>
 					<ul class="the_dropdown">
-						<li><span th:text="${opera.autore.cognome}"></span>
+						<li><span th:text="${opera.autore.nome} + ' ' + ${opera.autore.cognome}"></span>
 							<ul>
-								<li><a th:text="${opera.autore.cognome}"></a></li>
 								<li><a th:text="${opera.autore.nazionalita}"></a></li>
 								<li><a th:text="${opera.autore.dataNascita}"></a></li>
 								<li><a th:text="${opera.autore.dataMorte}"></a></li>
