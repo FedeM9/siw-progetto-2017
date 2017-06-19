@@ -4,6 +4,9 @@
 
 Il progetto è stato sviluppato usando Spring Tool Suite, Tomcat e PostgreSQL.
 
+
 Credenziali PostgreSQL:
+
 username: postgres
+
 password: postgres
