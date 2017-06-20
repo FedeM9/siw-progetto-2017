@@ -10,3 +10,5 @@ Credenziali PostgreSQL:
 username: postgres
 
 password: postgres
+
+Il file "Database PostgreSQL.zip" contiene un database usato per il testing che può essere importato tramite backup oppure importando manualmente le tabelle.
